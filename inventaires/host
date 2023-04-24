@@ -1,5 +1,9 @@
 [ubuntu]
-noeud-1 ansible_host=192.168.31.135
-noeud-2 ansible_host=192.168.31.22
+noeud-1 ansible_host=192.168.31.135 ansible_user=user1
+noeud-2 ansible_host=192.168.31.22 ansible_user=user1
 
+[prod]
+noeud-1 
 
+[dev]
+noeud-2
