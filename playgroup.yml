@@ -1,0 +1,17 @@
+---
+- name: Creer le groupe stagiaire et le repertoire stage qui lui est associer
+  hosts: ubuntu
+
+  tasks:
+
+    - name: Creer le groupe stagiaire
+      group:
+        name: stagiaire
+        state: present
+
+    - name: Creer le repertoire stage
+      file:
+        path: /usr/local/stagiaire
+        state: directory
+        group: stagiaire
+        mode: '0644'
