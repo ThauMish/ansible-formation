@@ -1,0 +1,17 @@
+---
+- name: Présentation de la variable groups
+  hosts: web
+
+  tasks:
+    - name: Affichage de la variable groups de chaque cible
+      debug:
+        msg: "{{ groups }}"
+
+    - name: Affichage des clés de la variable groups
+      debug:
+        msg: "{{ groups.keys() }}"
+
+    - name: Affichage si la machine appartient au groupe web
+      debug:
+        msg: "{{ inventory_hostname }} dans le groupe web"
+      when: inventory_hostname in groups.web

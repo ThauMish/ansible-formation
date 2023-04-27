@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Liste des stagiaires</title>
+</head>
+<body>
+	<h1>Liste des stagiaires</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Nom</th>
+				<th>Prénom</th>
+				<th>Âge</th>
+				<th>Adresse email</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for apprenti in apprentis %}
+			<tr>
+				<td>{{ apprenti.nom }}</td>
+				<td>{{ apprenti.prenom }}</td>
+				<td>{{ apprenti.age }}</td>
+				<td>{{ apprenti.email }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</body>
+</html>

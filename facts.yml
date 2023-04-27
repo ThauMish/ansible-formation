@@ -1,0 +1,10 @@
+---
+- name: Exemple utilisation facts
+  hosts: web
+
+  tasks:
+    - name: Affichage de la distribution
+      debug:
+        msg: "distribution : {{ ansible_distribution }}"
+ 
+        

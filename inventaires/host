@@ -2,8 +2,16 @@
 noeud-1
 noeud-2
 
-[prod]
+[web]
 noeud-1 
 
 [dev]
 noeud-2
+
+[centos]
+noeud-3
+
+[serveurs]
+noeud-1
+noeud-2
+noeud-3

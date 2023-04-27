@@ -1,1 +1,33 @@
-http_port: 8080
+groupes:
+  - nom: dev
+  - nom: ops
+
+utilisateurs:
+  - nom: toto
+    groupe: dev
+  - nom: titi
+    groupe: dev
+  - nom: tata
+    groupe: ops
+
+apache_http_port: "Listen 8080"
+apache_https_port: "Listen 8433"
+
+
+apprentis:
+  - nom: Ballet
+    prenom: Thomas
+    age: 23
+    email: tballet@dawan.fr
+  - nom: El Harchi
+    prenom: Omar
+    age: 72
+    email: oelharchi@dawan.fr
+  - nom: Mounier
+    prenom: Axel
+    age: 86
+    email: amounier@dawan.fr
+  - nom: Andrade
+    prenom: Florian
+    age: 20
+    email: fandrade@dawan.fr

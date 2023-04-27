@@ -1,0 +1,21 @@
+- name: Création des groupes et des utilisateurs
+  hosts: noeud-1
+  
+  vars_files:
+    - vars/default.yml  
+
+  tasks:
+
+  - name: Traitement du template
+    template:
+      src: files/ports.conf.j2
+      dest: /etc/apache2/port.conf
+    notify: restart-apache
+
+
+  handlers:
+
+    - name: restart-apache
+      service:
+        name: apache2
+        state: restarted

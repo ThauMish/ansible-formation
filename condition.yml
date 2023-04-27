@@ -1,0 +1,18 @@
+---
+- name: Exécution conditionnelle
+  hosts: web
+
+  vars:
+    go1: true
+    go2: false
+
+  tasks:
+    - name: A executer si la variable go est vrai
+      debug:
+        msg: "ok (go= {{ go1 }})"
+      when: go1 == true
+
+    - name: A executer si la variable go1 et go2 sont vrai
+      debug:
+        msg: "ok"
+      when: ansible_os_family == "Debian"

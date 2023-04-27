@@ -1,0 +1,25 @@
+- name: Création des groupes et des utilisateurs
+  hosts: all
+  
+  vars_files:
+    - vars/default.yml
+  
+  tasks:
+    - name: Créer les groupes
+      group:
+        name: "{{ item.nom }}"
+      loop: "{{ groupes }}"
+  
+    - name: Créer les utilisateurs
+      user:
+        name: "{{ item.nom }}"
+        group: "{{ item.groupe }}"
+      loop: "{{ utilisateurs }}"
+
+    - name: Ajouter les users en tant que sudo
+      lineinfile:
+        path: /etc/sudoers
+        line: "{{ item.nom }} ALL=(ALL) NOPASSWD:ALL"
+        state: present
+        validate: 'visudo -cf %s'
+      loop: "{{ utilisateurs }}"

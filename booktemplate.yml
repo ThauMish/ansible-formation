@@ -1,0 +1,12 @@
+- name: Création des groupes et des utilisateurs
+  hosts: all
+  
+  vars_files:
+    - vars/default.yml  
+
+  tasks:
+
+  - name: Traitement du template
+    template:
+      src: utilisateurs.txt.j2
+      dest: /home/user1/utilisateurs.txt

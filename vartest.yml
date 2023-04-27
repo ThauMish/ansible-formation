@@ -1,0 +1,9 @@
+---
+- name: Exemple debug
+  hosts: all
+
+  tasks:
+
+    - name: testvar
+      debug:
+        msg: "{{ ubuntu }}"

@@ -1,0 +1,16 @@
+---
+- name: Install apache
+  hosts: web
+
+  tasks:
+
+    - name: Installation paquet apache2
+      package:
+        name: apache2
+        state: present
+
+    - name: s'assurer que le service apache2 est actif
+      systemd:
+        name: apache2
+        enabled: yes
+        state: started

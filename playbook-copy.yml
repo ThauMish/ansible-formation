@@ -1,0 +1,12 @@
+---
+- name: Exemple debug
+  hosts: web
+  vars_files:
+    - vars/default.yml
+
+  tasks:
+
+    - name: exemple module debug
+      debug:
+        msg: "{{ http_port }}"
+        

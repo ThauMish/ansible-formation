@@ -1,0 +1,13 @@
+---
+
+- name: Creation groupe 
+  hosts: noeud-1
+
+  vars_files:
+    - vars/default.yml
+
+  tasks:
+    - name: Debug vars
+      debug:
+        msg: "{{ item.nom }} {{ item.admin }}"
+      loop: "{{ groupes }}"

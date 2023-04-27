@@ -1,0 +1,10 @@
+php_version: 7.4
+mysql_user: admin
+mysql_password: azerty
+mysql_db: db
+mysql_host: 192.168.31.22
+
+apache_vhost:
+  server_name: ansible-formation.com
+  server_alias: www.ansible-formation.com
+  document_root: /home/user1/webpage

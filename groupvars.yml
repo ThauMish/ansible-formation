@@ -1,0 +1,9 @@
+---
+- name: install apache
+  hosts: all
+
+  tasks:
+    - name: Installation paquet apache2
+      package:
+        name: "{{ package }}"
+        state: present

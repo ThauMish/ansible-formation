@@ -1,0 +1,16 @@
+- name: Les Lookups
+  hosts: ubuntu
+
+  tasks:
+
+    - name: Resolution DNS
+      debug:
+        msg: "Information DNS : {{ lookup('dig','google.fr') }}"
+
+    - name: Variable d'environnement
+      debug:
+        msg: "Le path est : {{ lookup('env', 'PATH') }} "
+
+    - name: Contenu fichier /etc/passwd
+      debug:
+        msg: "Contenu fichier : {{ lookup ('file', '/etc/passwd').split('\n') }} "

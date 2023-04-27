@@ -1,0 +1,28 @@
+- name: Les boucles
+  hosts: noeud-1
+
+  vars_files:
+    - vars/default.yml
+
+  tasks:
+
+    - name: Boucle 1
+      debug:
+        msg: "Couleur numero : {{ i+1 }} : {{ item }}"
+      loop:
+        - rouge
+        - orange
+        - bleu
+      loop_control:
+        index_var: i
+
+    - name: Boucle 2 
+      debug:
+        msg: "Groupe numero : {{ i+1 }} : {{ ngroup }}"
+      loop: "{{ groupes }}"
+      loop_control:
+        index_var: i
+        loop_var: ngroup
+
+
+      

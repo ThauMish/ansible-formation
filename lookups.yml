@@ -1,0 +1,13 @@
+---
+- name: Les lookups
+  hosts: localhost
+
+  tasks:
+    # pip install dnspython
+    - name: Résolution DNS
+      debug:
+        msg: "kernel.org: {{ lookup('dig','kernel.org') }}"
+
+    - name: Variable d'environnement
+      debug:
+        msg: "PATH: {{ lookup('env','PATH') }}"

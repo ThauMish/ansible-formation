@@ -1,0 +1,16 @@
+---
+- name: Install apache
+  hosts: ubuntu
+
+  tasks:
+    - name: Installation paquet apache2
+      package:
+        name: apache2
+        state: present
+      tags: ['webserver', 'apache']
+
+    - name: Installation paquet curl
+      package:
+        name: curl
+        state: present
+      tags: ['webserver', 'curl']
